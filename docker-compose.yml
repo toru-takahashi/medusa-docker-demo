@@ -9,8 +9,6 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-      redis:
-        condition: service_started
     volumes:
       - ./backend:/app/medusa
       - backend_node_modules:/app/medusa/node_modules
@@ -19,8 +17,7 @@ services:
     environment:
       NODE_ENV: development
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
-      REDIS_URL: redis://cache
-    
+          
   postgres:
     image: postgres:10.4-alpine
     restart: always
@@ -37,15 +34,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: medusa-docker
-    
-  redis:
-    image: redis:7.0.7-alpine
-    restart: always
-    container_name: cache
-    expose:
-      - 6379
-    volumes:
-      - redis_data:/data
     
   admin:
     build:
@@ -80,4 +68,3 @@ volumes:
   storefront_node_modules:
   backend_node_modules:
   postgres_data:
-  redis_data:
