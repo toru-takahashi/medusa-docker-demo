@@ -53,7 +53,11 @@ Once these proceedures are successfully completed, you’ll finally be able to p
 
 Now, you can see the following e-commerce website at http://localhost:8100/store
 
+![readme](./images/readme_1.png)
+
 Admin website is available with username:`admin@medusa-test.com`, password: `supersecret` at http://localhost:7700/
+
+![readme](./images/readme_2.png)
 
 ### Configure TD JS SDK in the site
 
@@ -84,6 +88,9 @@ td.trackClicks('clicks');
 ```
 
 Once the config is updated, the server automatically reloads the setting. Then, open Network Tab in Developer console. pageviews event will be recorded. In addition, you’ll see the data in TD Console
+
+![readme](./images/readme_3.png)
+![readme](./images/readme_4.png)
 
 ## Milestone 1: Familiarize Yourself With the E-Commerce Website and Its Data.
 
